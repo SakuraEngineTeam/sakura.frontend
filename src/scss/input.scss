@@ -1,0 +1,13 @@
+@import './vars';
+
+.input {
+  box-sizing: border-box;
+
+  background: $input-background;
+  color: $input-color;
+
+  border: $input-border;
+  border-radius: $input-border-radius;
+
+  padding: $input-padding;
+}

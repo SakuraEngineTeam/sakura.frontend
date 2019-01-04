@@ -1,0 +1,20 @@
+@import './vars';
+@import './mixins/index';
+
+.button {
+  box-sizing: border-box;
+
+  background: $button-background;
+  color: $button-color;
+
+  border: $button-border;
+  border-radius: $button-border-radius;
+
+  padding: $button-padding;
+
+  &:hover {
+    background: $button-hover-background;
+  }
+
+  @include clickable;
+}

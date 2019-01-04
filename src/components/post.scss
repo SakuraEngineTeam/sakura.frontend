@@ -1,0 +1,27 @@
+@import '../scss/vars';
+
+.post {
+  background: $block-background;
+
+  border: $block-border;
+  border-radius: $block-border-radius;
+
+  border-bottom-width: 3px;
+
+  &__header {
+    border-bottom: $block-header-border;
+
+    font-size: 1.1em;
+    font-weight: 300;
+
+    padding: $block-header-padding;
+  }
+
+  &__content {
+    padding: $block-content-padding;
+  }
+
+  &__message {
+    white-space: pre-line;
+  }
+}

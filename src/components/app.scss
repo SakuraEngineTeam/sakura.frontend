@@ -1,0 +1,43 @@
+@import '../scss/vars';
+@import '../scss/mixins/index';
+
+.app {
+  max-width: $md;
+  margin: 0 auto;
+
+  padding: $padding;
+
+  &__thread {
+    @include clearfix;
+  }
+
+  &__post {
+    margin-bottom: 10px;
+  }
+
+  &__post-area {
+    text-align: center;
+  }
+
+  &__post-form {
+    display: inline-block;
+    width: 100%;
+  }
+
+  @include min-width($xs) {
+    &__post {
+      min-width: $xs - 20px;
+    }
+
+    &__post {
+      // Hack to fit block width to content.
+      float: left;
+      clear: left;
+    }
+
+    &__post-form {
+      width: unset;
+      min-width: $xs - 20px;
+    }
+  }
+}

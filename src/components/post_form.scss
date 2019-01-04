@@ -1,0 +1,49 @@
+@import '../scss/vars';
+@import '../scss/mixins/index';
+
+.post-form {
+  background: $block-background;
+
+  border: $block-border;
+  border-radius: $block-border-radius;
+
+  border-bottom-width: 3px;
+
+  &__header {
+    border-bottom: $block-header-border;
+
+    padding: $block-header-padding;
+    text-align: center;
+  }
+
+  &__content {
+    padding: $block-content-padding;
+  }
+
+  &__row {
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+
+    &--rigth {
+      text-align: right;
+    }
+  }
+
+  &__message {
+    display: block;
+
+    min-height: 75px;
+
+    min-width: 100%;
+    max-width: 100%;
+
+    resize: vertical;
+  }
+
+  @include min-width($xs) {
+    &__message {
+      resize: both;
+    }
+  }
+}

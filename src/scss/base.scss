@@ -1,0 +1,11 @@
+@import './vars';
+
+html, body {
+  background: $background;
+  color: $color;
+
+  font: $font;
+
+  margin: 0;
+  padding: 0;
+}

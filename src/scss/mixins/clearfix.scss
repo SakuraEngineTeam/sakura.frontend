@@ -1,0 +1,9 @@
+@mixin clearfix {
+  // Hack to wrap float content.
+  &::before,
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}

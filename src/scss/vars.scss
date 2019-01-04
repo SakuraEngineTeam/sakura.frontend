@@ -1,0 +1,30 @@
+$xs: 600px;
+$sm: 900px;
+$md: 1200px;
+$lg: 1800px;
+
+$font:       14px Roboto, Helvetica, Arial, sans-serif;
+$background: #e5e5e5;
+$color:      #333;
+$padding:    5px 10px;
+
+$block-background:      #fff;
+$block-color:           $color;
+$block-border:          1px solid #d8d8d8;
+$block-border-radius:   4px;
+$block-header-border:   1px solid #f1f1f1;
+$block-header-padding:  5px 10px 4px;
+$block-content-padding: 8px 10px 5px;
+
+$input-background:    $block-background;
+$input-color:         $block-color;
+$input-border:        $block-border;
+$input-border-radius: 2px;
+$input-padding:       $padding;
+
+$button-background:       $block-background;
+$button-hover-background: #e5e5e5;
+$button-color:            $block-color;
+$button-border:           $block-border;
+$button-border-radius:    $input-border-radius;
+$button-padding:          $input-padding;
