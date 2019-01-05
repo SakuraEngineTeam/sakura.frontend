@@ -1,7 +1,7 @@
 var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var VueLoaderPlugin = require('vue-loader').VueLoaderPlugin;
-var CopyWebpackPlugin = require('copy-webpack-plugin')
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: 'development',
