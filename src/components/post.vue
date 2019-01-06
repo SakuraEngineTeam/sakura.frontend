@@ -2,7 +2,7 @@
   <section class="post">
     <div class="post__header">
       <span class="post__date">{{ date }}</span>
-      <span class="post__id">№{{ post.id }}</span>
+      <span class="post__id">№{{ post.viewId }}</span>
     </div>
 
     <div class="post__content">

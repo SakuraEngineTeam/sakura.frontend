@@ -1,7 +1,7 @@
 import {Post, PostInterface} from "./post";
 
 export class Api {
-  public static async createPost(message: string): Promise<number> {
+  public static async createPost(message: string): Promise<string> {
     return fetch('/api/posts', {
       method: 'POST',
       headers: {
@@ -16,12 +16,12 @@ export class Api {
   public static async getPosts(): Promise<Post[]> {
     return fetch('/api/posts')
       .then(response => response.json())
-      .then(data => data.map((item: PostInterface) => new Post(item.id, item.message, item.createdAt)));
+      .then(data => data.map((item: PostInterface) => Post.create(item)));
   }
 
-  public static async getPost(id: number): Promise<Post> {
+  public static async getPost(id: string): Promise<Post> {
     return fetch(`/api/post/${id}`)
       .then(response => response.json())
-      .then((item: PostInterface) => new Post(item.id, item.message, item.createdAt));
+      .then((item: PostInterface) => Post.create(item));
   }
 }
