@@ -1,0 +1,11 @@
+@import '../scss/mixins/index';
+
+.board-page {
+  @include clearfix;
+
+  &__thread-preview {
+    @include clearfix;
+
+    margin-bottom: 1em;
+  }
+}

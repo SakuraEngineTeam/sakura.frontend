@@ -1,19 +1,8 @@
 @import '../scss/vars';
 @import '../scss/mixins/index';
 
-.post {
-  background: $block-background;
-
-  border: $block-border;
-  border-radius: $block-border-radius;
-
-  border-bottom-width: 3px;
-
-  @include clearfix;
-
+.thread-preview {
   &__header {
-    border-bottom: $block-header-border;
-
     font-size: 1.1em;
     font-weight: 300;
 
@@ -22,9 +11,24 @@
 
   &__content {
     padding: $block-content-padding;
+    margin-bottom: 10px;
   }
 
   &__message {
     white-space: pre-line;
+  }
+
+  &__post {
+    margin-bottom: 10px;
+  }
+
+  @include min-width($xs) {
+    &__post {
+      min-width: $xs - 20px;
+
+      // Hack to fit block width to content.
+      float: left;
+      clear: left;
+    }
   }
 }

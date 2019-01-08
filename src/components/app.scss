@@ -7,14 +7,6 @@
 
   padding: $padding;
 
-  &__thread {
-    @include clearfix;
-  }
-
-  &__post {
-    margin-bottom: 10px;
-  }
-
   &__post-area {
     text-align: center;
   }
@@ -25,16 +17,6 @@
   }
 
   @include min-width($xs) {
-    &__post {
-      min-width: $xs - 20px;
-    }
-
-    &__post {
-      // Hack to fit block width to content.
-      float: left;
-      clear: left;
-    }
-
     &__post-form {
       width: unset;
       min-width: $xs - 20px;

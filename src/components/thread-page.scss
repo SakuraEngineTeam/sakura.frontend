@@ -1,0 +1,20 @@
+@import '../scss/vars';
+@import '../scss/mixins/index';
+
+.thread-page {
+  @include clearfix;
+
+  &__post {
+    margin-bottom: 10px;
+  }
+
+  @include min-width($xs) {
+    &__post {
+      min-width: $xs - 20px;
+
+      // Hack to fit block width to content.
+      float: left;
+      clear: left;
+    }
+  }
+}

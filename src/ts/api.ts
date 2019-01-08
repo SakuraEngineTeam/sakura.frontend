@@ -1,27 +1,45 @@
-import {Post, PostInterface} from "./post";
+import { ThreadPreviewInterface, ThreadPreview } from "./thread-preview";
+import { PostInterface, Post } from "./post";
 
 export class Api {
-  public static async createPost(message: string): Promise<string> {
-    return fetch('/api/posts', {
+  public static async createThread(message: string): Promise<string> {
+    return fetch(`/api/threads`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({message}),
+      body: JSON.stringify({
+        message,
+      }),
     })
       .then(response => response.json())
       .then(data => data.id);
   }
 
-  public static async getPosts(): Promise<Post[]> {
-    return fetch('/api/posts')
+  public static async createPost(threadId: string, message: string): Promise<string> {
+    return fetch(`/api/threads/${threadId}/posts`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        threadId,
+        message,
+      }),
+    })
       .then(response => response.json())
-      .then(data => data.map((item: PostInterface) => Post.create(item)));
+      .then(data => data.id);
   }
 
-  public static async getPost(id: string): Promise<Post> {
-    return fetch(`/api/post/${id}`)
+  public static getThreadPreviews(): Promise<ThreadPreviewInterface[]> {
+    return fetch('/api/thread-previews')
       .then(response => response.json())
-      .then((item: PostInterface) => Post.create(item));
+      .then(data => data.map((item: ThreadPreviewInterface) => ThreadPreview.create(item)));
+  }
+
+  public static async getThreadPosts(id: string): Promise<Post[]> {
+    return fetch(`/api/threads/${id}/posts`)
+      .then(response => response.json())
+      .then(data => data.map((item: PostInterface) => Post.create(item)));
   }
 }
