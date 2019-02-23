@@ -9,19 +9,16 @@ npm i
 2. Build front-end
 
 ```bash
-npm webpack
+npm run-script build
 ```
 
 ## Development
 
-Run webpack watch mode
-```
-npm run-script start
-```
-or
 ```
 npm run-script dev
 ```
+
+Then, visit http://localhost:8080/
 
 ## Tests
 
